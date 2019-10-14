@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+  },
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#4facfe",
+  "navigationBarTitleText": "订单结算结果",
+  "navigationBarTextStyle": "white"
+}

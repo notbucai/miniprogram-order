@@ -1,0 +1,78 @@
+/* pages/index/index.wxss */
+
+.index {
+  background-color: #6f86d6;
+  background-image: linear-gradient(to bottom, #4facfe 0%, #a2dcfd 100%);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 40pt;
+  color: rgb(213, 230, 253);
+  margin: 100rpx 0;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 2px 2px 6px rgb(19, 129, 255), 0 0 2px #fff;
+}
+
+.state {
+  position: absolute;
+  bottom: 200rpx;
+  padding-bottom: 100rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+  height: auto;
+  color: #fff;
+}
+
+.state_info {
+  font-size: 22pt;
+  margin-bottom: 60rpx;
+  font-weight: bold;
+}
+
+.state_qr {
+  /* position: absolute;
+  left: 50%;
+  bottom: 40%;
+  transform: translateX(-50%); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 240rpx;
+  height: 240rpx;
+  border-radius: 50%;
+  border: none;
+  color: #fff;
+  background-color: #3189fc;
+  box-shadow: 0 0 10px #187cff;
+  font-size: 12pt;
+  font-weight: bold;
+  animation: breathe 2s linear infinite;
+}
+
+.state_qr:active {
+  transition: all .2s;
+  background-color: #006eff;
+  box-shadow: 0 0 10px #1b7eff;
+}
+
+@keyframes breathe {
+  0% {
+    box-shadow: 0 0 16px #187cff;
+  }
+
+  50% {
+    box-shadow: 0 0 2px #187cff;
+  }
+
+  100% {
+    box-shadow: 0 0 16px #187cff;
+  }
+}

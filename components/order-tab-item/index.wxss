@@ -1,0 +1,37 @@
+.tab_item-view {
+  text-align: center;
+  padding: 24rpx 10rpx;
+  color: rgb(115, 125, 131);
+  font-size: 11pt;
+  vertical-align: middle;
+}
+tab_item__active{
+  color: #000;
+  background-color: #fff;
+}
+
+.tab_icon{
+  margin-right: 10rpx;
+  font-size: 10pt;
+  vertical-align: middle;
+}
+.tab_icon-fire{
+  color: #ff8684;
+  font-weight: bold;
+}
+.tab_icon-medel{
+  color: rgb(252, 182, 125);
+  font-weight: bold;
+}
+.tab_item__active{
+  color: #000;
+  background-color: #fff;
+}
+.tab_item__active .tab_icon-fire{
+  color: #ff3b38;
+  font-weight: bold;
+}
+.tab_item__active .tab_icon-medel{
+  color: rgb(250, 150, 36);
+  font-weight: bold;
+}

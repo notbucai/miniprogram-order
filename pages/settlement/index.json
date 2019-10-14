@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-radio": "/miniprogram_npm/vant-weapp/radio/index",
+    "van-radio-group": "/miniprogram_npm/vant-weapp/radio-group/index"
+  },
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#4facfe",
+  "navigationBarTitleText": "订单结算",
+  "navigationBarTextStyle": "white"
+}

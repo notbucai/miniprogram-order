@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "van-tree-select": "/miniprogram_npm/vant-weapp/tree-select/index",
+    "van-icon": "/miniprogram_npm/vant-weapp/icon/index",
+    "van-panel": "/miniprogram_npm/vant-weapp/panel/index",
+    "van-divider": "/miniprogram_npm/vant-weapp/divider/index",
+    "van-submit-bar": "/miniprogram_npm/vant-weapp/submit-bar/index",
+    "van-card": "/miniprogram_npm/vant-weapp/card/index",
+    "order-tab-item": "/components/order-tab-item/index"
+  }
+}

@@ -1,0 +1,49 @@
+<view class="settlement">
+
+  <view class="box head">
+    <text>订单编号</text>
+    <text>{{order_id}}</text>
+  </view>
+
+  <view class="box head">
+    <text>创建订单时间</text>
+    <text>{{createTime}}</text>
+  </view>
+
+  <view class="box main">
+    <view class="main-title">
+      应付金额：¥ {{money}}
+    </view>
+    <view class="main-list">
+
+      <view class="main-item" wx:for="{{list}}" wx:key="{{item.text}}">
+        <text>{{item.text}}</text>
+        <text>{{item.info}}</text>
+      </view>
+      
+    </view>
+  </view>
+
+  <view class="box type">
+    <view class="type-title">
+      <text>付款方式</text>
+    </view>
+    <view class="type-radio-group">
+      <van-radio-group value="{{ type }}" bind:change="onChange">
+        <view class="type-readio">
+          <van-radio name="1">在线支付</van-radio>
+        </view>
+        <view class="type-readio">
+          <van-radio name="2">到店支付</van-radio>
+        </view>
+      </van-radio-group>
+    </view>
+  </view>
+
+  <view class="btn">
+    <van-button type="info" size="large" bind:click="onSubmit" loading="{{isLoad}}">确认订单</van-button>
+  </view>
+  <!-- 消息 -->
+  <van-toast id="van-toast" />
+  <van-dialog id="van-dialog" />
+</view>

@@ -1,0 +1,108 @@
+<view class="order">
+
+  <scroll-view scroll-y="{{true}}" class="order_tab-scroll">
+
+    <!-- <order-tab-item 
+    text="热销"
+    data-index='{{-1}}'
+    icon="fire" active="{{mainActiveIndex===-1}}" 
+    bind:tap="handleSelectedTab"
+    />
+
+    <order-tab-item 
+    text="推荐" 
+    icon="medel" 
+    data-index='{{-2}}'
+    active="{{mainActiveIndex===-2}}" 
+    bind:tap="handleSelectedTab"
+    /> -->
+
+    <order-tab-item 
+      text="{{item.text}}"
+      active="{{mainActiveIndex===index}}" 
+      wx:for="{{items}}" 
+      wx:key="{{item.text}}"
+      data-index='{{index}}'
+      bind:tap="handleSelectedTab"
+     />
+
+  </scroll-view>
+
+  <scroll-view scroll-y scroll-with-animation="{{true}}" bindscroll="handleListScroll" class="order_list-scroll" scroll-into-view="{{listScrollToId}}">
+
+    <view class="order_item" wx:for="{{items}}" wx:for-index="order_index" wx:for-item="order_item" wx:key="{{order_item.text}}" id="order_item_{{order_index}}">
+      <!-- 标题 -->
+      <van-divider contentPosition="left">{{order_item.text}}</van-divider>
+      <!-- 商品列表 -->
+
+      <block wx:for="{{order_item.children}}" wx:for-item="item" wx:key="item.id">
+        <van-card
+          num="{{ item.count || 0}}"
+          tag="{{item.tag}}"
+          price="{{item.price}}"
+          desc="{{item.desc}}"
+          title="{{item.text}}"
+          thumb="{{item.imgUrl}}"
+          lazy-load="{{true}}"
+          custom-class="custom-class"
+          thumb-class="thumb-class"
+        >
+          <view slot="footer">
+            <van-button size="mini" bind:click="handleAdd" data-index="{{order_index}}" data-id="{{item.id}}">+</van-button>
+            <van-button size="mini" bind:click="handleSub" disabled="{{!item.count}}" data-index="{{order_index}}" data-id="{{item.id}}">-</van-button>
+          </view>
+        </van-card>
+      </block>
+
+    </view>
+    
+  </scroll-view>
+
+    <view  class="shopcartBox" hidden="{{ !showShopcart }}">
+      <view class="shopcart_head">
+        <text class="shopcart_title">已选商品</text>
+        <view class="shopcart_right" bindtap="handleCloseShopcart">
+          <van-icon name="delete" />
+          <text>清空</text>
+        </view>
+      </view>
+      <view class="close"  bind:tap="handleClickShowShopcart">
+        <van-icon name="cross"/>
+      </view>
+      <scroll-view slot="top" scroll-y class="shopcartBox-scroll">
+        <view class="empty" hidden="{{shopcart.length}}">
+          <text>空</text>
+        </view>
+        <block wx:for="{{shopcart}}" wx:for-item="item" wx:key="item.id">
+          <van-card
+            num="{{ item.count || 0}}"
+            price="{{item.detail.price}}"
+            title="{{item.detail.text}}"
+            lazy-load
+            custom-class="custom-class"
+            thumb-class="thumb-class"
+          >
+            <view slot="footer">
+              <van-button size="mini" bind:click="handleAdd" data-index="{{item.order_index}}" data-id="{{item.id}}">+</van-button>
+              <van-button size="mini" bind:click="handleSub" disabled="{{!item.count}}" data-index="{{item.order_index}}" data-id="{{item.id}}">-</van-button>
+            </view>
+          </van-card>
+        </block>
+
+      </scroll-view>
+    </view>
+  
+    <!-- 注意：修改了组件源代码。。。 -->
+    <van-submit-bar
+      disabled="{{ !money}}"
+      loading="{{ stopSubmit }}"
+      price="{{ money }}"
+      button-text="提交订单"
+      bind:submit="onSubmit"
+      bind:clickleft="handleClickShowShopcart"
+    >
+      <view class="shopping-icon" bind:tap="handleClickShowShopcart">
+        <van-icon name="shopping-cart-o" />
+      </view>
+    </van-submit-bar>
+</view>

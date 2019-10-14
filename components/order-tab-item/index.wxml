@@ -1,0 +1,4 @@
+<view class="tab_item-view {{active?'tab_item__active':''}} ">
+  <van-icon wx:if="{{icon}}" class="tab_icon tab_icon-{{icon}}" name="{{icon}}" />
+  <text>{{text}}</text>
+</view>

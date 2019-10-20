@@ -30,3 +30,10 @@
 > git clone https://github.com/wuxinweb/miniprogram-order.git    
 > cd miniprogram-order   
 > 打开小程序开发工具 > 导入项目  
+
+## 展示
+
+<img src="./show/1.png" width="240px"> | <img src="./show/2.png" width="240px">
+
+<img src="./show/3.png" width="240px"> ｜ <img src="./show/4.png" width="240px">  
+ <img src="./show/5.png" width="240px">

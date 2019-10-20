@@ -2,9 +2,10 @@
   "pages": [
     "pages/index/index",
     "pages/mine/index",
+    "pages/order/index",
+    "pages/successful/index",
     "pages/settlement/index",
-    "pages/menus/index",
-    "pages/successful/index"
+    "pages/menus/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
@@ -25,6 +26,10 @@
       {
         "pagePath": "pages/index/index",
         "text": "首页"
+      },
+      {
+        "pagePath": "pages/order/index",
+        "text": "订单"
       },
       {
         "pagePath": "pages/mine/index",

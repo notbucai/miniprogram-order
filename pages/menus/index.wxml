@@ -105,4 +105,5 @@
         <van-icon name="shopping-cart-o" />
       </view>
     </van-submit-bar>
+    <van-dialog id="van-dialog" />
 </view>

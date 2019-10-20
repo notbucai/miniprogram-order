@@ -1,3 +1,15 @@
-<view>
-  
+<view class="successful">
+
+  <view class="title">
+    <view class="icon"> <van-icon name="passed" size="60pt"/></view>
+    <view><text>订单结算成功</text></view>
+  </view>
+
+  <view class="info">
+    <view>1.请耐心等待后厨</view>
+    <view>1.如选到店付款，请记得结账</view>
+  </view>
+  <view class="go_order">
+    <van-button size="large" bind:click="goOrder">查看订单细节</van-button>
+  </view>
 </view>

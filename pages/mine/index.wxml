@@ -1,2 +1,27 @@
-<!--pages/mine/index.wxml-->
-<text>pages/mine/index.wxml</text>
+<view class="mine">
+
+  <view class="header">
+    <view>
+      <button class="info" open-type="getUserInfo" bindgetuserinfo="handleUserInfo">
+        <view class="avatar_box">
+          <image src="{{user.avatarUrl||'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1820523987,3798556096&fm=26&gp=0.jpg'}}"></image>
+        </view>
+        <view class="info_box">
+          <text>{{user.nickName||'未登陆点击登陆'}}</text>
+        </view>
+      </button>
+    </view>
+  </view>
+
+  <view class="list">
+    <van-cell-group>
+      <view bindtap="handleCallPhone">
+        <van-cell icon="phone-o" is-link title="联系平台" />
+      </view>
+      <view bindtap="handleShowInfo">
+        <van-cell icon="flower-o" is-link title="关于我们" />
+      </view>
+    </van-cell-group>
+  </view>
+  <van-dialog id="van-dialog" />
+</view>

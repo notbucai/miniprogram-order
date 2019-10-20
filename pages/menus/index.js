@@ -1,8 +1,13 @@
-// pages/order/index.js
+// 
 const {
   getMenus,
   createOrder
 } = require('../../http/api.js');
+const {
+  urlParamsParse
+} = require('../../utils/util.js');
+import Notify from '../../miniprogram_npm/vant-weapp/notify/notify';
+import Dialog from '../../miniprogram_npm/vant-weapp/dialog/dialog';
 const app = getApp();
 Page({
 
@@ -22,10 +27,13 @@ Page({
     listScrollToId: 'order_item_0'
   },
   // 初始化
-  _init() {
-    if (parseInt(app.globalData.currentState) !== parseInt(app.globalData.currentState)){
+  async _init() {
+    if (parseInt(app.globalData.currentState) !== parseInt(app.globalData.currentState)) {
       wx.navigateBack();
       return;
+    }
+    if (!app.globalData.menus || !app.globalData.menus.length) {
+      await app.app.globalData.menus();
     }
     this.setData({
       items: app.globalData.menus,
@@ -206,10 +214,34 @@ Page({
       }
     })
   },
+
+
+
+
+
+  /**
+   * 路由相关
+   */
+
+
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function({
+    table
+  }) {
+    if (!/[0-9]+/.test(table)) {
+      Dialog.alert({
+        title: '提示',
+        message: '路由不匹配，请扫码对的二维码'
+      }).then(() => {
+        wx.switchTab({
+          url: '/pages/index/index',
+        });
+      });
+      return;
+    }
+        
 
   },
 

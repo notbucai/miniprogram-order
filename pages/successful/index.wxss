@@ -1,1 +1,28 @@
 /* pages/successful/index.wxss */
+
+.title{
+  text-align: center;
+  margin: 20rpx 0;
+  font-size: 20pt;
+  padding-top: 150rpx;
+}
+.title .icon{
+  color: rgb(0, 98, 211);
+  margin-bottom: 30rpx;
+  
+}
+.info{
+  padding: 100rpx;
+  color: #888;
+  font-size: 11pt;
+  line-height: 1.5;
+}
+
+.go_order{
+  position: fixed;
+  bottom: 100rpx;
+  width: 100%;
+  box-sizing: border-box;
+  padding:0 60rpx;
+  color: #888;
+}

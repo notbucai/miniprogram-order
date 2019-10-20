@@ -51,10 +51,13 @@ Page({
   _handleOnlinePay() {
     // TODO 在线支付，后端结算单子返回前端
     // Toast('TODO 在线支付，后端结算单子返回前端');
-    Dialog.confirm({
+
+    const f = Dialog.confirm({
       title: '模拟',
       message: '模拟付款'
-    }).then(() => {
+    });
+    console.log(f);
+    f.then(() => {
       // 付款成功 的操作
       Toast('TODO 付款成功 的操作');
       this._handleGoSuccess();
@@ -72,8 +75,8 @@ Page({
   },
   // 付款成功跳转到付款成功界面
   _handleGoSuccess() {
-    wx.navigate({
-      url:"/pages/successful/index"
+    wx.redirectTo({
+      url: "/pages/successful/index"
     });
   },
   // 失败跳转到点餐页面

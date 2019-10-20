@@ -1,6 +1,7 @@
 const {
   menus,
-  createOrder
+  createOrder,
+  orderList
 } = require('./apiUrls.js');
 
 function get(url) {
@@ -47,10 +48,16 @@ async function _createOrder(table, ids) {
   return res.data.data;
 }
 
+async function getOrderList(table, ids) {
+  const [err, res] = await get(orderList);
+  return res.data.data;
+}
+
 
 module.exports = {
   get,
   post,
   getMenus,
-  createOrder: _createOrder
+  createOrder: _createOrder,
+  getOrderList
 }

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "我的订单",
+  "usingComponents": {
+    "van-panel": "/miniprogram_npm/vant-weapp/panel/index"
+  }
+}

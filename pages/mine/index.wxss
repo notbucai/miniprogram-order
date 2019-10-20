@@ -1,1 +1,59 @@
 /* pages/mine/index.wxss */
+.mine{
+  background-color: #fafafa;
+  min-height: 100%;
+  width: 100%;
+  position: fixed;
+}
+
+.header{
+  background-color: rgb(20, 82, 255);
+  background-image: url(https://i.loli.net/2019/10/19/vZct7xir5JRlj4q.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 40rpx;
+  height: 160rpx;
+  display: flex;
+  align-items: center;
+}
+
+.info {
+  display: flex;
+  color: #fff;
+  align-items: flex-end;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.info::after{
+  content: none;
+  border: none;
+  outline: none;
+  position: inherit;
+}
+.avatar_box {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.avatar_box image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.info_box{
+  margin: 30rpx;
+  font-size: 14pt;
+}
+
+.list{
+  width: 94%;
+  margin: 20rpx auto;
+  border-radius: 10px;
+  overflow: hidden;
+}

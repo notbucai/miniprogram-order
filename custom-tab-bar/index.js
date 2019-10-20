@@ -7,11 +7,11 @@ Component({
         text: '首页',
         url: '/pages/index/index'
       },
-      // {
-      //   icon: 'orders-o',
-      //   text: '点餐',
-      //   url: '/pages/order/index'
-      // },
+      {
+        icon: 'orders-o',
+        text: '订单',
+        url: '/pages/order/index'
+      },
       {
         icon: 'user-o',
         text: '我的',

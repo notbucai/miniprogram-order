@@ -1,4 +1,4 @@
-<van-tabbar active="{{ active }}" bind:change="onChange" wx:if="{{ishide}}">
+<van-tabbar active="{{ active }}" bind:change="onChange" wx:if="{{!ishide}}">
   <van-tabbar-item wx:for="{{ list }}" wx:key="index" icon="{{ item.icon }}">{{
     item.text
   }}</van-tabbar-item>

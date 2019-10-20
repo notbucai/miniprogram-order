@@ -1,0 +1,6 @@
+<view class="order">
+  <view class="order_item" bindtap="goOrder" data-id="{{item.id}}" wx:for="{{list}}" wx:key="{{item.id}}">
+    <van-panel title="{{item.date}}" desc="{{item.id}}" status="{{item.stat==1 ? '准备中':'完成'}}">
+    </van-panel>
+  </view>
+</view>

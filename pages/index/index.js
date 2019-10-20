@@ -3,6 +3,7 @@ const {
   urlParamsParse
 } = require('../../utils/util.js');
 import Notify from '../../miniprogram_npm/vant-weapp/notify/notify';
+import Dialog from '../../miniprogram_npm/vant-weapp/dialog/dialog';
 const app = getApp();
 Page({
 
@@ -10,7 +11,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    currentState: null
+    currentState: null,
+
   },
 
   appInstance: app,
@@ -19,13 +21,16 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {},
+  onLoad: function(options) {
+    
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-    console.log(this.appInstance.globalData);
+    // console.log(this.appInstance.globalData);
+    
   },
 
   /**
@@ -84,8 +89,9 @@ Page({
 
       if (parasms.table) {
         this._handleChangeState(parasms.table);
+        console.log(this.orderPath, parasms.table);
         wx.navigateTo({
-          url: '/' + this.orderPath,
+          url: '/' + this.orderPath + '?table=' + parasms.table,
         });
       } else {
         Notify({
@@ -113,7 +119,6 @@ Page({
       },
       fail(error) {
         console.log(error);
-        slef._handleChangeState();
         Notify({
           type: 'primary',
           message: '放弃扫码'
